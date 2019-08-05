@@ -219,4 +219,7 @@ split(sep=None, maxsplit=-1) method of builtins.str instance
 >>> s = "10"
 >>> s.zfill(5)
 '00010'
+>>> s = "hello"
+>>> s.zfill(10)
+'00000hello'
 >>> 

@@ -47,3 +47,67 @@ True
 >>> 'admin' in s
 True
 >>> 
+>>> 
+>>> li
+['India', 'USA', 'Russia', 'China']
+>>> count =0
+>>> while count < len(li):
+	print(li[count].upper())
+	count += 1
+
+	
+INDIA
+USA
+RUSSIA
+CHINA
+>>> while count < len(li):
+	print(li[count].upper())
+	count += 1
+
+	
+>>> count =0
+>>> while count < len(li):
+	print(li[count].upper())
+	count += 1
+
+	
+INDIA
+USA
+RUSSIA
+CHINA
+>>> li
+['India', 'USA', 'Russia', 'China']
+>>> for country in li:
+	print(country.upper())
+
+	
+INDIA
+USA
+RUSSIA
+CHINA
+>>> range(5)
+range(0, 5)
+>>> for i in range(5):
+	print(i)
+
+	
+0
+1
+2
+3
+4
+>>> li = ['Hope', 'lives', 'ON', 'Smile', 'to', 'let', 'you', 'Smile', 'hope']
+>>> for i in range(li.count('Smile')):
+	li.remove('Smile')
+
+	
+>>> li
+['Hope', 'lives', 'ON', 'to', 'let', 'you', 'hope']
+>>> 
+>>> 
+>>> import random
+>>> random.randint(0,100)
+27
+>>> random.randint(0,100)
+36
+>>> 20 --> Low, 50 --> High, 40--> high, 30--> low
