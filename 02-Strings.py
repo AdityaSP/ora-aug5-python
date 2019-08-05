@@ -143,3 +143,80 @@ SyntaxError: invalid syntax
 'epoh uoy tel ot no sevil epoH'
 >>> # syntactic shorthand is also called as syntactic sugars
 >>> 
+
+>>> ############## Strings as objects ##############
+>>> s
+'Hello World'
+>>> s.upper()
+'HELLO WORLD'
+>>> a = 10
+>>> s.lower()
+'hello world'
+>>> s.count('o')
+2
+>>> s.isalpha()
+False
+>>> "hello".isalpha()
+True
+>>> a = "Hope lives on to let you hope"
+>>> a.split()
+['Hope', 'lives', 'on', 'to', 'let', 'you', 'hope']
+>>> s = "192.168.99.100"
+>>> s.split('.')
+['192', '168', '99', '100']
+>>> s ="hello::what::where"
+>>> s.split("::")
+['hello', 'what', 'where']
+>>> a = "Hope lives on to let you hope"
+>>> a.split()
+['Hope', 'lives', 'on', 'to', 'let', 'you', 'hope']
+>>> a.split(" ")
+['Hope', 'lives', 'on', 'to', 'let', 'you', 'hope']
+>>> a = "Hello  How"
+>>> a.split()
+['Hello', 'How']
+>>> a.split(' ')
+['Hello', '', 'How']
+>>> s = "conhost.exe                  23756 Console                    2     18,648 K"
+>>> s.split(" ")
+['conhost.exe', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '23756', 'Console', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2', '', '', '', '', '18,648', 'K']
+>>> s.split()
+['conhost.exe', '23756', 'Console', '2', '18,648', 'K']
+>>> a = "Hope lives on to let you hope"
+>>> a.split()
+['Hope', 'lives', 'on', 'to', 'let', 'you', 'hope']
+>>> ans = a.split()
+>>> type(ans)
+<class 'list'>
+>>> help(len)
+Help on built-in function len in module builtins:
+
+len(obj, /)
+    Return the number of items in a container.
+
+>>> help(s.split)
+Help on built-in function split:
+
+split(sep=None, maxsplit=-1) method of builtins.str instance
+    Return a list of the words in the string, using sep as the delimiter string.
+    
+    sep
+      The delimiter according which to split the string.
+      None (the default value) means split according to any whitespace,
+      and discard empty strings from the result.
+    maxsplit
+      Maximum number of splits to do.
+      -1 (the default value) means no limit.
+
+>>> len.__doc__
+'Return the number of items in a container.'
+>>> s.split.__doc__
+'Return a list of the words in the string, using sep as the delimiter string.\n\n  sep\n    The delimiter according which to split the string.\n    None (the default value) means split according to any whitespace,\n    and discard empty strings from the result.\n  maxsplit\n    Maximum number of splits to do.\n    -1 (the default value) means no limit.'
+>>> # __ = double underscore = dunder
+>>> s.zfill.__doc__
+'Pad a numeric string with zeros on the left, to fill a field of the given width.\n\nThe string is never truncated.'
+>>> s = 10
+>>> s = "10"
+>>> s.zfill(5)
+'00010'
+>>> 
