@@ -1,4 +1,4 @@
-ui = input("Enter your string: ")
+ui = input("Enter your string: ").strip().upper()
 
 if ui == ui[::-1]:
     print("You have entered a palindrome")
