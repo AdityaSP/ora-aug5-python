@@ -227,4 +227,169 @@ AttributeError: 'list' object has no attribute 'appen'
 124
 >>> 
 >>> 
+>>> def greet():
+	def sayhi():
+		return "Hi"
+	return sayhi
+
+>>> x = greet()
+>>> type(x)
+<class 'function'>
+>>> x()
+'Hi'
+>>> 
+>>> 
+>>> def greet(n):
+	def sayhi():
+		return "Hi " + n
+	return sayhi
+
+>>> x = greet('Aditya')
+>>> y = greet('Arun')
+>>> 
+>>> 
+>>> type(x), type(y)
+(<class 'function'>, <class 'function'>)
+>>> # body of x : return Hi Aditya, body of y : return Hi Arun
+>>> x()
+'Hi Aditya'
+>>> y()
+'Hi Arun'
+>>> # closure --> special higher order function , if the returned function captures a local variable of the parent function
+>>> 
+>>> 
+>>> 
+>>> def bill(item1, item2, tax):
+	total = item1 + item2
+	grandtotal = total + total * tax
+	return grandtotal
+
+>>> bill (100, 200, .05)
+315.0
+>>> def bill(item1, item2):
+	total = item1 + item2
+	def withtax(tax):
+		return total+ total * tax
+	return withtax
+
+>>> b1 = bill(100,200)
+>>> type(b1)
+<class 'function'>
+>>> b1(0.05)
+315.0
+>>> bill(10,20)(0.1)
+33.0
+>>> def f1(i1,i2):
+	def f2(t):
+		return (i1+ i2) + (i1+i2)* t
+	def f3(t):
+		return (i1+ i2) + (i1+i2)* 2*t
+	if i1 > 1000 or i2 > 1000:
+		return f3
+	else
+	
+SyntaxError: invalid syntax
+>>> def f1(i1,i2):
+	def f2(t):
+		return (i1+ i2) + (i1+i2)* t
+	def f3(t):
+		return (i1+ i2) + (i1+i2)* 2*t
+	if i1 > 1000 or i2 > 1000:
+		return f3
+	else:
+		return f2
+
+	
+>>> x = f1(1000,2000)
+>>> x(.1)
+3600.0
+>>> y = f1(100,200)
+>>> y(.1)
+330.0
+>>> 
+>>> # Decorators
+>>> 
+>>> 
+>>> def sayhi():
+	print("Hi")
+
+	
+>>> sayhi()
+Hi
+>>> def sayhi():
+	print("*" * 30)
+	print("Hi")
+	print("*" * 30)
+
+	
+>>> sayhi()
+******************************
+Hi
+******************************
+>>> def sayhi():
+	print("Hi")
+
+	
+>>> def deco(f):
+	def wrapper():
+		print("*" * 30)
+		f()
+		print("*" * 30)
+	return wrapper
+
+>>> f = deco(sayhi)
+>>> f()
+******************************
+Hi
+******************************
+>>> deco(sayhi)()
+******************************
+Hi
+******************************
+>>> def greet():
+	print("Hello")
+
+	
+>>> deco(greet)()
+******************************
+Hello
+******************************
+>>> @deco
+def sayhi():
+	print("Hi")
+
+	
+>>> sayhi()
+******************************
+Hi
+******************************
+>>> @deco
+def greet():
+	print("Hello")
+
+	
+>>> greet()
+******************************
+Hello
+******************************
+>>> def deco2(f):
+	def wrapper():
+		print("-" * 30)
+		f()
+		print("-" * 30)
+	return wrapper
+
+>>> 
+>>> @deco2
+@deco
+def sayhi():
+	print("Hi")
+
+	
+>>> sayhi()
+------------------------------
+******************************
+Hi
+******************************
+------------------------------
 >>> 
