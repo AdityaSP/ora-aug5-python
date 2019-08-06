@@ -107,4 +107,12 @@ full_name(fn, ln, title='mr')
 >>> l.sort(reverse=True)
 >>> l
 [78, 34, 23, 2, 0]
+>>> sorted(iterable=l)
+Traceback (most recent call last):
+  File "<pyshell#59>", line 1, in <module>
+    sorted(iterable=l)
+TypeError: sorted expected 1 arguments, got 0
+>>> l.sort()
+>>> l
+[0, 2, 23, 34, 78]
 >>> 
