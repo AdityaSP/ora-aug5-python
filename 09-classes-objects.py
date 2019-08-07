@@ -96,3 +96,19 @@ TypeError: __init__() missing 2 required positional arguments: 'b' and 'n'
 >>> honda.brand, honda.name
 ('Honda', 'City')
 >>> 
+
+>>> 
+""" In C++/Java a class def would look like this
+class A {
+	
+		
+		String name;
+		String brand;
+		A (String n, String b){
+			this.name = n
+			this.name = b
+		}
+	}
+We would declare what data attributes we want and later define then in a constructor. Where as python cannot declare variables. So it has to compose them"""
+' In C++/Java a class def would look like this\nclass A {\n\t\n\t\t\n\t\tString name;\n\t\tString brand;\n\t\tA (String n, String b){\n\t\t\tthis.name = n\n\t\t\tthis.name = b\n\t\t}\n\t}\nWe would declare what data attributes we want and later define then in a constructor. Where as python cannot declare variables. So it has to compose them'
+>>> 
