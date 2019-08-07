@@ -1,5 +1,10 @@
+class InsufficientBalanceError(Exception):
+    pass
+    
 class Account():
     def __init__(self, n, b, t):
+        if type(self) == Account:
+            raise NameError("Create objects using SA or CA")
         self.n = n
         self.b = b
         self.t = t
@@ -16,8 +21,7 @@ class SA(Account):
         
     def debit(self, amount):
         if self.b < amount:
-            # TODO raise an exception
-            print("Insufficient Balance")
+            raise InsufficientBalanceError("Check Balance")
         else:
             Account.debit(self,amount)
             
@@ -33,7 +37,11 @@ class CA(Account):
 
 sa = SA('Aditya')
 print(sa)
-sa.debit(1000)
+try:
+    sa.debit(1000)
+except InsufficientBalanceError as err:
+    print("Please check the balance and continue")
+    
 print(sa)
 
 ca = CA('ABC inc.')
@@ -41,9 +49,12 @@ print(ca)
 ca.debit(100)
 print(ca)
 
+ac1 = Account("Aditya", 100, 'S')
 
 
 
+#user --> sa.debit(1000) --> SA.debit(1000)
+#user friendly message <-- try ... except <-- raise Error
         
 #VERSION 1
 
