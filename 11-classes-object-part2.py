@@ -389,4 +389,43 @@ Larry Ellison
 >>> full_name = [ f + " " + l for f,l in zip(fn,ln)]
 >>> full_name
 ['Bill Gates', 'Steve Jobs', 'Larry Ellison']
+>>> for item in enumerate(zip(fn,ln)):
+	print(item)
+
+	
+(0, ('Bill', 'Gates'))
+(1, ('Steve', 'Jobs'))
+(2, ('Larry', 'Ellison'))
+>>> i,f,l = (0, ('Bill', 'Gates'))
+Traceback (most recent call last):
+  File "<pyshell#183>", line 1, in <module>
+    i,f,l = (0, ('Bill', 'Gates'))
+ValueError: not enough values to unpack (expected 3, got 2)
+>>> i, fullname = (0, ('Bill', 'Gates'))
+>>> fullname
+('Bill', 'Gates')
+>>> f, l = fullname
+>>> f
+'Bill'
+>>> l
+'Gates'
+>>> i
+0
+>>> 
+>>> 
+>>> 
+>>> #3 + 4 --> int.__add__(3,4)
+>>> int.__add__(3,4)
+7
+>>> type(int.__add__(3,4))
+<class 'int'>
+>>> 3 + 4 + 5
+12
+>>> int.__add__(int.__add__(3,4), 5)
+12
+>>>  1 == 2
+ 
+SyntaxError: unexpected indent
+>>> 1 == 2
+False
 >>> 
