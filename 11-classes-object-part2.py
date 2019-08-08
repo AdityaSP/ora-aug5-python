@@ -216,3 +216,177 @@ ValueError: too short
 >>> e1
 Emp(Will)
 >>> 
+
+>>> 
+>>> class Student():
+	def __init__(self, i, n):
+		self.i = i
+		self.n = n
+	def __repr__(self):
+		return "Student[{},{}]".format(self.i, self.n)
+
+	
+>>> s1 = Student(1, "Steve")
+>>> s1
+Student[1,Steve]
+>>> a = "Hello"
+>>> s2 = Student(1, "Steve")
+>>> 
+>>> a = 1000
+>>> b = 1000
+>>> a == b
+True
+>>> s1 == s2
+False
+>>> id(s1), id(s2)
+(1807349314440, 1807354398088)
+>>> s3 = s1
+>>> s3 == s1
+True
+>>> s3 == s2
+False
+>>> id (s1), id(s2), id(s3)
+(1807349314440, 1807354398088, 1807349314440)
+>>> li = [Student("1", "A"), Student("2", "B"), Student("3", "C")]
+>>> li
+[Student[1,A], Student[2,B], Student[3,C]]
+>>> n = [1,2,3]
+>>> n.remove(2)
+>>> n
+[1, 3]
+>>> li
+[Student[1,A], Student[2,B], Student[3,C]]
+>>> li.remove(Student("2","B"))
+Traceback (most recent call last):
+  File "<pyshell#114>", line 1, in <module>
+    li.remove(Student("2","B"))
+ValueError: list.remove(x): x not in list
+>>> a= 1000
+>>> b = 1000
+>>> id(a), id(b)
+(1807354580464, 1807354580208)
+>>> a == b
+True
+>>> class Student():
+	def __init__(self, i, n):
+		self.i = i
+		self.n = n
+	def __repr__(self):
+		return "Student[{},{}]".format(self.i, self.n)
+	def __eq__(self, other):
+		return self.i == other.i and self.n == other.n
+
+	
+>>> s1 = Student(1, "Steve")
+>>> s2 = Student(1, "Steve")
+>>> id(s1), id(s2)
+(1807354479688, 1807354540936)
+>>> s1 == s2
+True
+>>> s2 = Student(1, "Stevie")
+>>> s1 == s2
+False
+>>> s1 == s2
+False
+>>> s1 = Student(1, "Steve")
+>>> s2 = Student(1, "Steve")
+>>> s1 == s2
+True
+>>> s1.__eq__(s2)
+True
+>>> Student.__eq__(s1,s2)
+True
+>>> #bmw.drive() --> Car.drive(bmw)
+>>> dir(int)
+['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']
+>>> int.__eq__(a,b)
+True
+>>> a == b
+True
+>>> a = -12
+>>> abs(a)
+12
+>>> len(li)
+3
+>>> 
+>>> li = ['Will','Steve','Aditya']
+>>> for item in li:
+	print(item)
+
+	
+Will
+Steve
+Aditya
+>>> for item in enumerate(li):
+	print(item)
+
+	
+(0, 'Will')
+(1, 'Steve')
+(2, 'Aditya')
+>>> for idx, name in enumerate(li):
+	print(idx, name)
+
+	
+0 Will
+1 Steve
+2 Aditya
+>>> for idx, name in enumerate(li):
+	print(idx+1, name)
+
+	
+1 Will
+2 Steve
+3 Aditya
+>>> li
+['Will', 'Steve', 'Aditya']
+>>> st = [  Student(i,n) for i, n in enumerate(li)]
+>>> st
+[Student[0,Will], Student[1,Steve], Student[2,Aditya]]
+>>> st = [  Student(i+1,n) for i, n in enumerate(li)]
+>>> st
+[Student[1,Will], Student[2,Steve], Student[3,Aditya]]
+>>> type(st[0])
+<class '__main__.Student'>
+>>> st[0].i, st[0].n
+(1, 'Will')
+>>> 
+>>> 
+>>> st
+[Student[1,Will], Student[2,Steve], Student[3,Aditya]]
+>>> sorted(st)
+Traceback (most recent call last):
+  File "<pyshell#163>", line 1, in <module>
+    sorted(st)
+TypeError: '<' not supported between instances of 'Student' and 'Student'
+>>> sorted(st, key = lambda student : student.n)
+[Student[3,Aditya], Student[2,Steve], Student[1,Will]]
+>>> sorted(st, key = lambda student : student.i)
+[Student[1,Will], Student[2,Steve], Student[3,Aditya]]
+>>> 
+>>> 
+>>> fn = ['Bill','Steve','Larry']
+>>> 
+>>> ln = ['Gates','Jobs','Ellison']
+>>> for item in zip(fn,ln):
+	print(item)
+
+	
+('Bill', 'Gates')
+('Steve', 'Jobs')
+('Larry', 'Ellison')
+>>> for f,l in zip(fn,ln):
+	print(f,l)
+
+	
+Bill Gates
+Steve Jobs
+Larry Ellison
+>>> fn
+['Bill', 'Steve', 'Larry']
+>>> ln
+['Gates', 'Jobs', 'Ellison']
+>>> full_name = [ f + " " + l for f,l in zip(fn,ln)]
+>>> full_name
+['Bill Gates', 'Steve Jobs', 'Larry Ellison']
+>>> 
