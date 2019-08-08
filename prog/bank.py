@@ -13,7 +13,7 @@ class Account():
     def __repr__(self):
         return self.__str__()
     def debit(self, amount):
-        self.b -= amount    
+        self.b -= amount 
 
 class SA(Account):
     def __init__(self, n, b=100):

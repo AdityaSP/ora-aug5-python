@@ -339,4 +339,10 @@ TypeError: __init__() missing 1 required positional argument: 'self'
 ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'report', 'v1', 'v2']
 >>> obj.report()
 10
+>>> isinstance(obj, B)
+True
+>>> issubclass(B, A)
+True
+>>> issubclass(A, B)
+False
 >>> 
