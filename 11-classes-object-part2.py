@@ -163,3 +163,56 @@ AttributeError: 'Emp' object has no attribute '__name'
 >>> e1._Emp__name
 'Bill'
 >>> 
+>>> 
+
+>>> 
+
+>>> 
+
+>>> 
+
+>>> 
+
+>>> 
+
+>>> 
+
+>>> 
+>>> e1 = Emp("Bill")
+>>> e1.get_name()
+'Bill'
+>>> e1.set_name("Will")
+>>> e1
+Emp(Will)
+>>> class Emp():
+	def __init__(self,n):
+		if len(n)<3:
+			raise ValueError("too short")
+		self.__name = n
+	def __repr__(self):
+		return "Emp({})".format(self.__name)
+	def get_name(self):
+		return self.__name
+	def set_name(self, newn):
+		if len(newn)<3:
+			raise ValueError("too short")
+		self.__name = newn
+	name = property(get_name, set_name)
+
+	
+>>> 
+>>> 
+>>> e1= Emp("Bill")
+>>> e1.name
+'Bill'
+>>> e1.name = 'El'
+Traceback (most recent call last):
+  File "<pyshell#82>", line 1, in <module>
+    e1.name = 'El'
+  File "<pyshell#77>", line 12, in set_name
+    raise ValueError("too short")
+ValueError: too short
+>>> e1.name = "Will"
+>>> e1
+Emp(Will)
+>>> 
