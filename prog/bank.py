@@ -35,21 +35,21 @@ class CA(Account):
         return "CA({},{},{})".format(self.n, self.b, self.t)
 
 
-sa = SA('Aditya')
-print(sa)
-try:
-    sa.debit(1000)
-except InsufficientBalanceError as err:
-    print("Please check the balance and continue")
-    
-print(sa)
-
-ca = CA('ABC inc.')
-print(ca)
-ca.debit(100)
-print(ca)
-
-ac1 = Account("Aditya", 100, 'S')
+#sa = SA('Aditya')
+#print(sa)
+#try:
+#    sa.debit(1000)
+#except InsufficientBalanceError as err:
+#    print("Please check the balance and continue")
+#    
+#print(sa)
+#
+#ca = CA('ABC inc.')
+#print(ca)
+#ca.debit(100)
+#print(ca)
+#
+#ac1 = Account("Aditya", 100, 'S')
 
 
 

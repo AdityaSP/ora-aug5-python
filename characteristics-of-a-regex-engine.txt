@@ -1,0 +1,6 @@
+1. No overlapping searches
+2. Char by char ( 2 pointers one on the text and one on the pattern)
+3. metachar *,?,+..-> affects the "char" behind metachar
+4. greedy
+5. No optimization -> Regex engine does not optimize
+6. backtracking 
