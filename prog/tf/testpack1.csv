@@ -1,0 +1,10 @@
+module,testcase,test,run
+# a new test case <TODO>
+testbank,TestAccount,test_sa_account_creation,y
+testbank,TestAccount,test_ca_account_creation,y
+testbank,TestAccount,test_sa_account_credit,y
+testbank,TestAccount,test_ca_account_credit,y
+testbank2,TestAccount2,test_sa_account_creation2,y
+testbank2,TestAccount2,test_ca_account_creation2,y
+testbank2,TestAccount2,test_sa_account_credit2,y
+testbank2,TestAccount2,test_ca_account_credit2,y
