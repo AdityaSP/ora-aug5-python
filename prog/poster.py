@@ -14,7 +14,5 @@ if r.ok:
             print ("Downloading", movie['Poster'])
             poster = requests.get(movie['Poster'])
             if poster.ok:
-                fh = open(movie['imdbID'] +'.jpg' ,'wb') 
-                fh.write(poster.content)
-                fh.close()
-                
+                with open(movie['imdbID'] +'.jpg' ,'wb') as fh:
+                    fh.write(poster.content)
