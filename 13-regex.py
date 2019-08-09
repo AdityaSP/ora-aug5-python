@@ -209,3 +209,44 @@ xyxyxyxy
 >>> 
 >>> 
 >>> 
+>>> 
+>>> t = 'man eats mango'
+>>> p = 'man|mango'
+>>> re.findall(p,t)
+['man', 'man']
+>>> for m in re.finditer(p,t):
+	print(m.start(), m.end())
+
+	
+0 3
+9 12
+>>> p= "mango|man"
+>>> t
+'man eats mango'
+>>> re.findall(p,t)
+['man', 'mango']
+>>> p = "man(go)?"
+>>> re.findall(p,t)
+['', 'go']
+>>> for m in re.finditer(p,t):
+	print(m.group())
+
+	
+man
+mango
+>>> t = 'the strength of class is 30. only 4 present.'
+>>> p = r'.+([0-9]+)\.'
+>>> re.findall(p,t)
+['0']
+>>> t = 'the strength of class is 3099. only 4 present.'
+>>> re.findall(p,t)
+['9']
+>>> for m in re.finditer(p,t):
+	print(m.group())
+
+	
+the strength of class is 3099.
+>>> p = r'.+?([0-9]+)\.'
+>>> re.findall(p,t)
+['3099']
+>>> 
